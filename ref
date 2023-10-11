@@ -1,0 +1,48 @@
+Hitesh freecodecamp
+https://www.youtube.com/watch?v=30LWjhZzg50
+
+
+// Play Ground
+https://www.typescriptlang.org/
+https://www.typescriptlang.org/play
+
+
+// Arrow function
+https://www.w3schools.com/js/js_arrow_function.asp
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+Let us take a look at two examples to understand the difference.
+
+Both examples call a method twice, first when the page loads, and once again when the user clicks a button.
+
+The first example uses a regular function, and the second example uses an arrow function.
+
+The result shows that the first example returns two different objects (window and button), and the second example returns the window object twice, because the window object is the "owner" of the function.
+
+
+// Regular Function:
+hello = function() {
+  document.getElementById("demo").innerHTML += this;
+}
+
+// The window object calls the function:
+window.addEventListener("load", hello);
+
+// A button object calls the function:
+document.getElementById("btn").addEventListener("click", hello); 
+
+
+// Arrow Function:
+hello = () => {
+  document.getElementById("demo").innerHTML += this;
+}
+
+// The window object calls the function:
+window.addEventListener("load", hello);
+
+// A button object calls the function:
+document.getElementById("btn").addEventListener("click", hello); 
+
+NB: Remember these differences when you are working with functions. Sometimes the behavior of regular functions is what you want, if not, use arrow functions.
