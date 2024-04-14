@@ -6,10 +6,11 @@ TYPESCRIPT:
   but you need to learn additionally all stuffs about TS(data types).
 
   - Typescript cannot be run directly in the browser, it needs to be Transpiled in to JS which can then be run into the browser.
+  By default it transples to ES3(an old version of JS which is safe to run on all browsers)
   - We can run both(TS &JS ) of them simultaneosly in a single project, which means you can take a JS project that you need to transform to TS
   and change it file by file not at once.
 
-  - Typescript does'nt have basic knowledge, it is an enhacement of JS, which means you need to learn it if you know JS.
+  - Typescript does'nt have basic knowledge, it is an enhacement of JS, which means you can learn it if you know JS.
 
   JS being a dyanamic typed language, means you can write anything and it will only break at runtime, but with typescript
   you can see the errors as you write code(in your editor or inside console), there fore discover errors earlier.
