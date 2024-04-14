@@ -5,7 +5,7 @@ let user: [string, number, boolean]
 user = ["a", 1, true]  // you can not do user = ["a", true, 1]
 
 
-// NB: Tuple make sure not just what is inside the array, even the ordr of the array matters
+// NB: Tuple make sure not just what is inside the array, even the order of the array matters
 // It's very use for things like API calls when data has to be in a specific order sometimes
 
 // Another classic example is RGB values where we don't expect there will a fourth number
