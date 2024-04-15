@@ -63,3 +63,35 @@ type PopularTag = string
 type MaybePopularTag = PopularTag | null // defining a custom type combining union and type so that we don't use the union def. everytime(PopularTag | null)
 
 const popularTags: PopularTag[] = ["coffee", "programming"]
+
+
+// ANY/VOID/NEVER/UNKNOWN
+let foo: void // It make no sense, because we can't assign it anything more than undefined and null, we use it to say the function don't return anything
+foo = null
+foo = undefined // foo = "foo" // this will throw an error b'se void is a set of null & undefined
+
+// any
+let any$: any; // Simply anything can be assigned later(any type turns-off typescript checks != recommended)
+any$ = 1
+any$ = "mambo"
+any$ = [0,1]
+// console.log(any$.bar()); // This won't complain(TS ignores it) even if any$ don't have property bar()
+
+//never
+const doSomething = (): never =>{
+    throw "never"
+    // console.log('never');  //function returning never cannot be executed to the end(we cannot have code that will end)
+}
+
+
+// unknown
+let vAny: any = 10
+let vUnknown: unknown = 10 // default to 10
+vUnknown = "a" // At the beginning it looks like it works much like any but it's not
+
+let s1:string = vAny
+let s2: string = vUnknown as string // We can't assign unknown directly into other type b'se TS does'nt know yet what type is it
+// console.log(vUnknown.foo());
+
+let pageNo: string = "1"
+let numericPageNo: number = (pageNo as unknown )as number
