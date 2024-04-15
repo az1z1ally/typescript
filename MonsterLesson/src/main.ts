@@ -97,3 +97,18 @@ let s2: string = vUnknown as string // We can't assign unknown directly into oth
 
 let pageNo: string = "1"
 let numericPageNo: number = (pageNo as unknown )as number
+
+
+
+// WORKING WITH DOM
+const someElement = document.querySelector(".foo") as HTMLInputElement  // TS by default will give us an Element which is a generic type(which is highest class in hierarchy) b'se it only know about type and not our markup hence we use "as" to convert it to a specific DOM element i.e input element
+// console.log("someElement", (someElement as any).value); // Not recommended quick fix the use of as to convert element to a specific DOM element is recommended
+console.log("someElement", someElement.value); // Without as assertion we can only access generic properties for all DOM elements
+
+
+// Adding an event listener
+someElement.addEventListener("blur", (event) => { // Type Event is also a highest class in hierachy, which will be the default if we don't use the appropriate type when we select our element
+    const target = event.target as HTMLInputElement // Defining our target first to a correct type
+    console.log("event", target.value);
+})
+// Working with DOM in TS is just type narrowimg with "as"
