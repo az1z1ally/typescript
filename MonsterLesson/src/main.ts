@@ -86,8 +86,10 @@ const doSomething = (): never =>{
 
 // unknown
 let vAny: any = 10
+let ab = vAny
+
 let vUnknown: unknown = 10 // default to 10
-vUnknown = "a" // At the beginning it looks like it works much like any but it's not
+vUnknown = "a" // At the beginning it looks like it works much like any but it's not see example below
 
 let s1:string = vAny
 let s2: string = vUnknown as string // We can't assign unknown directly into other type b'se TS does'nt know yet what type is it
