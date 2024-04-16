@@ -9,22 +9,22 @@ const getFullName = (name:string, surname:string): string => {
 
 // OBJECTS
 // Unlike JS, TS can be helpful with entity definition 
-const user: {name:string, age:number} = { 
+const user$: {name:string, age:number} = { 
     name: "TS",
     age: 7
 }
 
 // INTERFACES -- Special type in TS that help us to describe entities(create object with some properties)
-interface UserInterface {
+interface IUser {
     name: string
     age?: number //age is not mandatory(?)
     // getMessage: () => string
     getMessage(): string
 }
 
-// class User {} // If we have our interface name UserInterface as well it can lead to confusion, that's why it good to suffix interfaces with word Interface to differentiate it with class names
+// class User {} // If we have our interface name IUser as well it can lead to confusion, that's why it good to suffix interfaces with word Interface to differentiate it with class names
 
-const newUser: UserInterface = {
+const newUser: IUser = {
     name: "Interface",
     age: 0,
     getMessage() {
@@ -32,7 +32,7 @@ const newUser: UserInterface = {
     },
 }
 
-const noAgeUser: UserInterface = {
+const noAgeUser: IUser = {
     name: "No Age",
     getMessage() {
         return `Hello ${name}`
@@ -47,7 +47,7 @@ let pageNumber: string | number = "1"
 // The most popular usecase of union is checking for null
 let errorMsg: string | null = null // By default errorMsg it is null, may be later at some point we can get an error so we want to write it inside string
 
-let userUnion: UserInterface | null = null // userUnion is null b'se we didn't fetch user or it can be UserInterface
+let userUnion: IUser | null = null // userUnion is null b'se we didn't fetch user or it can be IUser
 
 // let someProp: string | number | null | undefined | string[] // Avoid overusing union b'se it makes your code loose the safety advantage we got from TS
 
